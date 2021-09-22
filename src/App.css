@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: "Inter";
   src: url("./assets/fonts/Inter/static/Inter-Regular.ttf");
@@ -92,7 +91,7 @@ h4 {
   -ms-overflow-style: none;
   background: none;
   overflow-x: hidden;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: hidden;
   cursor: default;
   z-index: 20;
   background-color: #fdfcfc;
@@ -108,7 +107,7 @@ h4 {
   -ms-overflow-style: none;
   background: none;
   overflow-y: hidden;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: hidden;
   cursor: default;
   z-index: 0;
   background-color: #1c1917;
@@ -146,12 +145,10 @@ h4 {
   z-index: 99999999999999;
   transition: 0.4s ease-out;
 }
-
 .nav__link,
 .footer__link {
   text-decoration: none;
 }
-
 .footer__links {
   display: flex;
   justify-content: center;
@@ -186,17 +183,14 @@ h4 {
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
 }
-
-/* transform: scale(1);
-    transform-origin: left top; */
 .nav__link {
-  z-index: 20000000000000000000000000;
+  z-index: 55555555;
   position: relative;
   cursor: pointer;
   color: #1c1917;
 }
 .nav__link--shaded {
-  z-index: 20000000000000000000000000;
+  z-index: 55555555;
   position: relative;
   cursor: pointer;
   color: white;
@@ -223,7 +217,6 @@ footer {
   display: flex;
   padding: 0 32px;
 }
-
 .about::-webkit-scrollbar {
   display: none;
 }
@@ -242,7 +235,6 @@ footer {
 .about__links {
   margin-right: 209px;
 }
-
 /* each section  */
 .each {
   height: 100vh;
@@ -295,7 +287,6 @@ footer {
   z-index: 55555555;
   transition: 0.3s ease-out;
 }
-
 .eachArtWork__img,
 .video-box {
   width: auto;
@@ -306,7 +297,6 @@ footer {
   height: 680px;
   width: 1180px;
 }
-
 .eachArtWork__img-box {
   display: flex;
   justify-content: center;
@@ -348,7 +338,6 @@ footer {
   color: #1c1917;
   cursor: pointer;
 }
-
 .artworks__list p {
   color: transparent;
 }
@@ -364,7 +353,6 @@ footer {
   z-index: 999999999999999999999;
   position: relative;
 }
-
 .bio-box {
   margin-top: 302px;
 }
@@ -419,9 +407,6 @@ footer {
   height: 100%;
   transition: 0.2s ease-out;
 }
-
-/* render post  */
-
 /* Iphone X */
 @media (min-width: 320px) and (max-width: 767px) {
   body,
@@ -518,7 +503,6 @@ footer {
     bottom: 41px;
   }
 }
-
 /* laptop */
 @media (min-width: 1025px) and (max-width: 1440px) {
   body,
