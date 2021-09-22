@@ -40,7 +40,7 @@ const App = () => {
             setTimer((timer) => {
                 return timer - 1
             })
-        }, 1000)
+        }, 1700)
     }, [])
     useEffect(() => {
         if(timer === 0 ){
