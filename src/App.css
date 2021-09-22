@@ -278,7 +278,6 @@ footer {
   transition: 0.3s;
 }
 .eachArtWork__footer {
-  cursor: pointer !important;
   color: #1c1917;
   display: flex;
   justify-content: space-between;
@@ -290,7 +289,6 @@ footer {
   transition: 0.3s;
 }
 .eachArtWork__footer--shaded {
-  cursor: pointer !important;
   background: #1c1917;
   color: transparent;
   display: flex;
@@ -347,6 +345,7 @@ footer {
   justify-content: flex-end;
 }
 .post__back {
+  cursor: pointer !important;
   text-decoration: none;
   color: #1c1917;
   cursor: pointer;
@@ -461,9 +460,6 @@ footer {
   }
   .header {
     padding: 24px 16px;
-  }
-  .custom-cursor {
-    display: none;
   }
   .posts-box {
     width: 238px;
