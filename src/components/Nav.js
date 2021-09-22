@@ -5,10 +5,13 @@ export default function Nav({modal, openModal}) {
     return (
         <>
          <header  className="header">
-            <Link to="/" className={modal === true ? 'header__h1--shaded' : "header__h1"}>Daria Zaprigaeva</Link>
+            <Link
+            to="/" className={modal === true ? 'header__h1--shaded' : "header__h1"}>Daria Zaprigaeva</Link>
             {modal === true ? 
-            <p onClick={openModal} className='nav__link--shaded'>Artwork</p>
-            : <p onClick={openModal} className='nav__link'>About</p>
+            <p
+            onClick={openModal} className='nav__link--shaded'>Artwork</p>
+            : <p
+            onClick={openModal} className='nav__link'>About</p>
         }
          </header>  
         </>

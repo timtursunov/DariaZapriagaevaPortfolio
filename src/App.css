@@ -395,6 +395,9 @@ footer {
   transform: translate(-50%, -20%);
   pointer-events: none;
 }
+.custom-cursor--none {
+  display: none;
+}
 .custom-cursor--white {
   display: flex;
   justify-content: center;
@@ -410,6 +413,7 @@ footer {
   pointer-events: none;
 }
 .bio {
+  z-index: -1;
   position: fixed;
   left: 32px;
   margin-top: 353px;

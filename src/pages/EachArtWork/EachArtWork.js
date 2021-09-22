@@ -20,6 +20,7 @@ function EachArtWork(props) {
     const [isLoading, setLoading] = useState(true)
     const [hover, setHover] = useState(false)
     const [timer, setTimer] = useState(1)
+    const [hoverOnLink, setHoverOnLink] = useState(false)
     const iid = useRef(null)
 
 
@@ -54,6 +55,10 @@ function EachArtWork(props) {
     const imageHovering = () => {
         setHover(prev => !prev)
     }
+
+    const CursorHoverOnLink = () => {
+        setHoverOnLink(prev => !prev)
+    }
     
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
     let previousSlug = artworks[id - 1]
@@ -64,8 +69,8 @@ function EachArtWork(props) {
       if (isLoading) return <Nav/>
       return (
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
-            <Nav modal={modal} openModal={openModal}/>
-            <Bio modal={modal}/>
+            <Nav modal={modal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>
+            <Bio modal={modal} CursorHoverOnLink={CursorHoverOnLink}/>
 
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
@@ -90,18 +95,24 @@ function EachArtWork(props) {
     return (
         <>
                 <div className={`${hover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${modal === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} `}>
-                    <CustomCursor artworks={artworks} modal={modal}/>
+                    <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink}/>
                     <div className="post">
                         {renderPost()}
                     </div>
                     <div className='eachArtWork__footer'>
                             {id - 1 >= 0 && (  
-                                <Link className="post__back" to={`/artwork/${previousSlug?.fields?.slug}`}>
+                                <Link
+                                onMouseOver={() => CursorHoverOnLink()}
+                                onMouseOut={() => CursorHoverOnLink()}
+                                className="post__back" to={`/artwork/${previousSlug?.fields?.slug}`}>
                                     {post?.firstInCollection === 'true' ? <p>Prev Project</p> : <p>Prev</p>}
                                 </Link>
                                 )}
                                 {id + 1 < artworks.length && (  
-                                    <Link className="post__back" to={`/artwork/${nextSlug?.fields?.slug}`}>
+                                    <Link
+                                    onMouseOver={() => CursorHoverOnLink()}
+                                    onMouseOut={() => CursorHoverOnLink()}
+                                    className="post__back" to={`/artwork/${nextSlug?.fields?.slug}`}>
                                         {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
                                     </Link>
                                 )}

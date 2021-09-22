@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { useParams} from 'react-router-dom';
 
-export default function CustomCursor(props) {
-    let {artworks} = props;
-    let {modal} = props
+export default function CustomCursor({artworks, modal, hoverOnLink}) {
     const cursorRef = React.useRef(null);
     const { slug } = useParams()
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
-
-
 
     const [position, setPosition] = useState({x: 0, y: 0});
     useEffect(() => {
@@ -25,12 +21,8 @@ export default function CustomCursor(props) {
         setPosition({x: e.clientX, y: e.clientY});
         }; 
 
-
-
-
-
     return (
-        <div ref={cursorRef} className={modal === true ? 'custom-cursor--white' :'custom-cursor' }
+        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--white' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} `}
         style={{
                left: `${position.x}px`,
                top: `${position.y}px`
