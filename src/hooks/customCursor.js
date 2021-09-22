@@ -3,6 +3,7 @@ import { useParams} from 'react-router-dom';
 
 export default function CustomCursor(props) {
     let {artworks} = props;
+    let {modal} = props
     const cursorRef = React.useRef(null);
     const { slug } = useParams()
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
@@ -29,7 +30,7 @@ export default function CustomCursor(props) {
 
 
     return (
-        <div ref={cursorRef} className='custom-cursor' 
+        <div ref={cursorRef} className={modal === true ? 'custom-cursor--white' :'custom-cursor' }
         style={{
                left: `${position.x}px`,
                top: `${position.y}px`

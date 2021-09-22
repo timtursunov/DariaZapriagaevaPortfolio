@@ -90,7 +90,7 @@ function EachArtWork(props) {
     return (
         <>
                 <div className={`${hover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${modal === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} `}>
-                    <CustomCursor artworks={artworks}/>
+                    <CustomCursor artworks={artworks} modal={modal}/>
                     <div className="post">
                         {renderPost()}
                     </div>
@@ -106,7 +106,7 @@ function EachArtWork(props) {
                                     </Link>
                                 )}
                     </div>
-                    <div className='eachArtWork__info-box'>
+                    <div className={hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'}>
                                 <p>{post?.collection}</p>
                     </div>
                 </div>

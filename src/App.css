@@ -125,7 +125,7 @@ h4 {
   width: auto;
   height: 176px;
   cursor: pointer;
-  padding-right: 400px;
+  margin-right: 400px;
 }
 .header__h1 {
   text-decoration: none;
@@ -161,12 +161,16 @@ h4 {
   flex-wrap: wrap;
   justify-content: center;
 }
+.footer__middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
 .footer__link {
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  cursor: pointer;
 }
 .footer__link::after {
+  cursor: pointer;
   content: "";
   position: absolute;
   background-color: #1c1917;
@@ -236,13 +240,9 @@ footer {
   margin-right: 209px;
 }
 /* each section  */
-.each {
-  height: 100vh;
-  background-color: red !important;
-}
+
 .eachArtWork {
   width: 100%;
-  cursor: not-allowed !important;
   background-color: #fdfcfc;
   z-index: 55555555;
   transition: 0.3s;
@@ -250,7 +250,6 @@ footer {
 .eachArtWork--shaded {
   width: 100%;
   background: #1c1917;
-  cursor: not-allowed !important;
   transition: 0.3s ease-out;
   background-color: #1c1917;
 }
@@ -264,8 +263,22 @@ footer {
   justify-content: center;
   bottom: 41px;
   position: relative;
+  transition: 0.3s;
+}
+.eachArtWork__info-box--shaded {
+  color: #fdfcfc;
+  opacity: 0.6;
+  font-size: 12px;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  bottom: 41px;
+  position: relative;
+  transition: 0.3s;
 }
 .eachArtWork__footer {
+  cursor: pointer !important;
   color: #1c1917;
   display: flex;
   justify-content: space-between;
@@ -277,6 +290,7 @@ footer {
   transition: 0.3s;
 }
 .eachArtWork__footer--shaded {
+  cursor: pointer !important;
   background: #1c1917;
   color: transparent;
   display: flex;
@@ -290,7 +304,7 @@ footer {
 .eachArtWork__img,
 .video-box {
   width: auto;
-  height: 480px;
+  height: 680px;
   object-fit: contain;
 }
 .eachArtWork__video {
@@ -318,8 +332,7 @@ footer {
   height: 100vh;
   transition: 0.3s;
 }
-.eachArtWork__wrapper,
-.eachArtWork__wrapper * {
+.eachArtWork__wrapper {
   cursor: none;
 }
 .eachArtWork__wrapper--shaded {
@@ -378,6 +391,21 @@ footer {
   height: 20px;
   position: absolute;
   z-index: 999999999;
+  color: #1c1917;
+  transform: translate(-50%, -20%);
+  pointer-events: none;
+}
+.custom-cursor--white {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  background-color: transparent;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  z-index: 999999999;
+  color: #fdfcfc;
   transform: translate(-50%, -20%);
   pointer-events: none;
 }
@@ -401,7 +429,9 @@ footer {
 .bio--shaded {
   position: fixed;
   left: 32px;
-  margin-top: 353px;
+  width: 100%;
+  z-index: 6000000;
+  padding-top: 353px;
   font-size: 15px;
   color: white;
   height: 100%;
@@ -445,7 +475,7 @@ footer {
   .artwork__img,
   .video-box {
     height: 104px;
-    padding-right: 120px;
+    margin-right: 120px;
   }
   .video-box {
     width: 180px;
@@ -460,12 +490,10 @@ footer {
   }
   .bio--shaded {
     left: 16px;
-    margin-top: 68px;
+    padding-top: 68px;
   }
   .eachArtWork__info-box {
     font-size: 9px;
-  }
-  .eachArtWork__info-box {
     bottom: 42px;
   }
 }
@@ -482,25 +510,23 @@ footer {
   .artwork__img,
   .video-box {
     height: 136px;
-    padding-right: 280px;
+    margin-right: 280px;
   }
   .eachArtWork__img {
     height: 480px;
   }
-
-  .custom-cursor {
-    display: none;
-  }
   .eachArtWork__info-box {
     font-size: 10px;
+    bottom: 41px;
+  }
+  .eachArtWork__info-box--shaded {
+    font-size: 10px;
+    bottom: 41px;
   }
   .eachArtWork__video {
     height: 480px;
     width: 100%;
     padding: 0 180px;
-  }
-  .eachArtWork__info-box {
-    bottom: 41px;
   }
 }
 /* laptop */
@@ -516,7 +542,7 @@ footer {
   .artwork__img,
   .video-box {
     height: 160px;
-    padding-right: 360px;
+    margin-right: 360px;
   }
   .eachArtWork__img {
     height: 600px;
@@ -526,6 +552,9 @@ footer {
     width: 1055px;
   }
   .eachArtWork__info-box {
+    bottom: 43px;
+  }
+  .eachArtWork__info-box--shaded {
     bottom: 43px;
   }
 }
