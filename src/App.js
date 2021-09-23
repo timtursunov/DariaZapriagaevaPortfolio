@@ -10,6 +10,7 @@ const App = () => {
   const [filterType, setFilterType] = useState('all')
   const [footer, setFooter] = useState(false)
   const [modal, setModal] = useState(false)
+  const [hoverOnLink, setHoverOnLink] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,6 +69,9 @@ const App = () => {
     const changeFooterFilter = () => {
       setFooter(prev => !prev)
   }
+  const CursorHoverOnLink = () => {
+    setHoverOnLink(prev => !prev)
+}
 
 
 
@@ -83,13 +87,13 @@ const App = () => {
         <Route 
           exact path='/'  
           render={(props) => (
-            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} />
+            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink} />
           )}
           />
             <Route 
               exact path='/artwork/:slug'  
               render={(props) => (
-                <EachArtWork {...props} artworks={filteredArt}  modal={modal} setModal={setModal} openModal={openModal} />
+                <EachArtWork {...props} artworks={filteredArt}  modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink} />
               )}
               />
         </Switch>

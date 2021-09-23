@@ -12,7 +12,8 @@ function EachArtWork(props) {
     let {artworks} = props;
     let {modal} = props
     let {openModal} = props
-
+    let {hoverOnLink} = props
+    let {CursorHoverOnLink} = props
 
     const { slug } = useParams()
 
@@ -20,7 +21,7 @@ function EachArtWork(props) {
     const [isLoading, setLoading] = useState(true)
     const [hover, setHover] = useState(false)
     const [timer, setTimer] = useState(1)
-    const [hoverOnLink, setHoverOnLink] = useState(false)
+
     const iid = useRef(null)
 
 
@@ -56,9 +57,7 @@ function EachArtWork(props) {
         setHover(prev => !prev)
     }
 
-    const CursorHoverOnLink = () => {
-        setHoverOnLink(prev => !prev)
-    }
+
     
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
     let previousSlug = artworks[id - 1]
@@ -71,6 +70,7 @@ function EachArtWork(props) {
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
             <Nav modal={modal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>
             <Bio modal={modal} CursorHoverOnLink={CursorHoverOnLink}/>
+            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink}/>
 
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
@@ -95,7 +95,6 @@ function EachArtWork(props) {
     return (
         <>
                 <div className={`${hover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${modal === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} `}>
-                    <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink}/>
                     <div className="post">
                         {renderPost()}
                     </div>

@@ -310,6 +310,7 @@ footer {
   width: 1180px;
 }
 .eachArtWork__img-box {
+  cursor: none;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -334,6 +335,7 @@ footer {
   cursor: none;
 }
 .eachArtWork__wrapper--shaded {
+  cursor: default !important;
   background-color: #1c1917;
   height: 100vh;
   transition: 0.3s ease-out;
@@ -397,20 +399,6 @@ footer {
 .custom-cursor--none {
   display: none;
 }
-.custom-cursor--white {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: fixed;
-  background-color: transparent;
-  width: 40px;
-  height: 20px;
-  position: absolute;
-  z-index: 999999999;
-  color: #fdfcfc;
-  transform: translate(-50%, -20%);
-  pointer-events: none;
-}
 .bio {
   z-index: -1;
   position: fixed;
@@ -429,7 +417,11 @@ footer {
 .bio-links p:nth-child(1) {
   margin-bottom: 6px;
 }
+.bio-links {
+  width: 100%;
+}
 .bio--shaded {
+  cursor: default !important;
   position: fixed;
   left: 32px;
   width: 100%;
@@ -486,15 +478,22 @@ footer {
   }
   .bio-bio {
     width: 343px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   .bio--shaded {
+    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     left: 16px;
     padding-top: 68px;
   }
   .eachArtWork__info-box {
-    font-size: 9px;
+    font-size: 10px;
     bottom: 42px;
+  }
+  .eachArtWork__info-box--shaded {
+    font-size: 10px;
   }
 }
 /* tablet */

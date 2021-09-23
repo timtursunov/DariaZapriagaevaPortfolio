@@ -22,7 +22,7 @@ export default function CustomCursor({artworks, modal, hoverOnLink}) {
         }; 
 
     return (
-        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--white' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} `}
+        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--none' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} `}
         style={{
                left: `${position.x}px`,
                top: `${position.y}px`
