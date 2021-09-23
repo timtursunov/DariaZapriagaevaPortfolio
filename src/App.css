@@ -153,6 +153,10 @@ h4 {
   display: flex;
   justify-content: center;
 }
+.footer__links--shaded {
+  display: none;
+  justify-content: center;
+}
 .footer__link-div {
   width: 21px;
   margin-left: 20px;
@@ -574,6 +578,14 @@ footer {
 .bio-references--shaded p:nth-child(2) {
   margin-left: 4px;
   margin-right: 4px;
+}
+.footer__scroller {
+  color: #1c1917;
+  z-index: 1;
+}
+.footer__scroller--shaded {
+  color: transparent;
+  z-index: -1;
 }
 
 /* Iphone X */
