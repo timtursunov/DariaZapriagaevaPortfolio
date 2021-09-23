@@ -770,7 +770,8 @@ footer {
   .artwork__img,
   .video-box {
     height: 104px;
-    margin-right: 120px;
+    margin-right: 0px;
+    padding-right: 120px;
   }
   .video-box {
     width: 180px;
