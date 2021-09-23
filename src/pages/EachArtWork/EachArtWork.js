@@ -69,8 +69,8 @@ function EachArtWork(props) {
       return (
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
             <Nav modal={modal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>
-            <Bio modal={modal} CursorHoverOnLink={CursorHoverOnLink}/>
-            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink}/>
+            <Bio modal={modal}/>
+            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover}/>
 
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
@@ -88,7 +88,11 @@ function EachArtWork(props) {
                     />}
                 </div>
             </div>
-
+            <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
+                            <p>Development by Timur Tursunov</p>
+                            <p>/</p>
+                            <p>Design by Deniz Kilicci</p>
+            </div>
         </div>
       )
     }
@@ -98,29 +102,29 @@ function EachArtWork(props) {
                     <div className="post">
                         {renderPost()}
                     </div>
-                    <div className='eachArtWork__footer'>
-                            {id - 1 >= 0 && (  
-                                <Link
-                                onMouseOver={() => CursorHoverOnLink()}
-                                onMouseOut={() => CursorHoverOnLink()}
-                                className="post__back" to={`/artwork/${previousSlug?.fields?.slug}`}>
-                                    {post?.firstInCollection === 'true' ? <p>Prev Project</p> : <p>Prev</p>}
-                                </Link>
-                                )}
-                                {id + 1 < artworks.length && (  
+
+                        <div className='eachArtWork__footer'>
+                                {id - 1 >= 0 && (  
                                     <Link
                                     onMouseOver={() => CursorHoverOnLink()}
                                     onMouseOut={() => CursorHoverOnLink()}
-                                    className="post__back" to={`/artwork/${nextSlug?.fields?.slug}`}>
-                                        {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
+                                    className={modal === true ? "post__back--none" : "post__back"} to={`/artwork/${previousSlug?.fields?.slug}`}>
+                                        {post?.firstInCollection === 'true' ? <p>Prev Project</p> : <p>Prev</p>}
                                     </Link>
-                                )}
-                    </div>
-                    <div className={hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'}>
-                                <p>{post?.collection}</p>
-                    </div>
+                                    )}
+                                    {id + 1 < artworks.length && (  
+                                        <Link
+                                        onMouseOver={() => CursorHoverOnLink()}
+                                        onMouseOut={() => CursorHoverOnLink()}
+                                        className={modal === true ? "post__next--none" :"post__next"} to={`/artwork/${nextSlug?.fields?.slug}`}>
+                                            {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
+                                        </Link>
+                                    )}
+                        </div>
+                        <div className={`${hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'} ${modal === true ? 'eachArtWork__info-box--none'  : 'eachArtWork__info-box'}`}>
+                                    <p>{post?.collection}</p>
+                        </div>
                 </div>
-
         </>
 
       )

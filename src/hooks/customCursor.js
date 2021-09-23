@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams} from 'react-router-dom';
 
-export default function CustomCursor({artworks, modal, hoverOnLink}) {
+export default function CustomCursor({artworks, modal, hoverOnLink, hover}) {
     const cursorRef = React.useRef(null);
     const { slug } = useParams()
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
@@ -22,7 +22,7 @@ export default function CustomCursor({artworks, modal, hoverOnLink}) {
         }; 
 
     return (
-        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--none' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} `}
+        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--none' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} ${hover === true ? 'custom-cursor--white' : 'custom-cursor'} `}
         style={{
                left: `${position.x}px`,
                top: `${position.y}px`
