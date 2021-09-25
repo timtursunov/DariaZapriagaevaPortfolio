@@ -3,10 +3,8 @@ import { useParams} from 'react-router-dom';
 
 export default function CustomCursor({modal, hover, post, didLinkHover}) {
     const cursorRef = React.useRef(null);
-    // const { slug } = useParams()
-    // console.log(post)
-    //howManyInCollection
-    // orderOnCollection
+    const { slug } = useParams()
+    console.log(post)
 
     const [position, setPosition] = useState({x: 0, y: 0});
     useEffect(() => {

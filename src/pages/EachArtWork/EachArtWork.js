@@ -71,8 +71,8 @@ function EachArtWork(props) {
       if (isLoading) return <Nav/>
       return (
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
-            {/* <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} />
-            <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} /> */}
+            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} />
+            <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
             <Bio modal={modal}/>
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
@@ -108,7 +108,7 @@ function EachArtWork(props) {
                     <div className="post">
                         {renderPost()}
                     </div>
-                        {/* <div className='eachArtWork__footer'>
+                        <div className='eachArtWork__footer'>
                                 {id - 1 >= 0 && (  
                                     <Link
                                     onMouseOver={() => hoverLink()}
@@ -125,7 +125,7 @@ function EachArtWork(props) {
                                             {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
                                         </Link>
                                     )}
-                        </div> */}
+                        </div>
                         <div className={`${hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'} ${modal === true ? 'eachArtWork__info-box--none'  : 'eachArtWork__info-box'}`}>
                                     <p>{post?.collection}</p>
                         </div>
