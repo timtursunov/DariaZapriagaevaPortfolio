@@ -6,9 +6,6 @@ import Bio from '../../components/Bio';
 
 
 const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, modal, CursorHoverOnLink, hoverOnLink}) => {
-    console.log(artworks)
-
-
     return (
         <>
             <Nav modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>

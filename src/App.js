@@ -73,8 +73,6 @@ const App = () => {
     setHoverOnLink(prev => !prev)
 }
 
-let collectionArray =art.map(each => each.fields.collection)
-console.log(collectionArray)
   return(
     <Router>
       {preLoader ? <div className='loader-wrapper'>
