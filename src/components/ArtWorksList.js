@@ -7,7 +7,7 @@ export default function ArtWorksList({artworks ,modal}) {
         <>
             <div className={modal === true ? 'artworks__list--shaded' : 'artworks__list'}  >
                 {artworks.map((artwork, index) => 
-                <ArtWork artwork={artwork} index={index} modal={modal}/>
+                <ArtWork artworks={artworks} artwork={artwork} index={index} modal={modal}/>
                 )}
             </div> 
         </>

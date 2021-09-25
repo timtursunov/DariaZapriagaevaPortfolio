@@ -6,14 +6,15 @@ import { withRouter } from 'react-router'
 import CustomCursor from '../../hooks/customCursor';
 import Bio from '../../components/Bio';
 import Nav from '../../components/Nav';
+import EachNav from '../../components/EachNav';
 
 
 function EachArtWork(props) {
     let {artworks} = props;
     let {modal} = props
-    let {openModal} = props
     let {hoverOnLink} = props
-    let {CursorHoverOnLink} = props
+    let {setModal} = props
+    let {openModal} = props
 
     const { slug } = useParams()
 
@@ -21,6 +22,7 @@ function EachArtWork(props) {
     const [isLoading, setLoading] = useState(true)
     const [hover, setHover] = useState(false)
     const [timer, setTimer] = useState(1)
+    const [didLinkHover, setDidLinkHover] = useState(false)
 
     const iid = useRef(null)
 
@@ -37,8 +39,6 @@ function EachArtWork(props) {
             clear()
         } 
     }, [timer])
-
-
 
     useEffect(() => {
         setLoading(true)
@@ -57,30 +57,37 @@ function EachArtWork(props) {
         setHover(prev => !prev)
     }
 
+    const hoverLink = () => {
+        setDidLinkHover(prev => !prev)
+    }
+
 
     
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
     let previousSlug = artworks[id - 1]
     let nextSlug = artworks[id + 1]
 
-
     const renderPost = () => {
       if (isLoading) return <Nav/>
       return (
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
-            <Nav modal={modal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>
+            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} />
+            {/* <Nav modal={modal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/> */}
+            <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
             <Bio modal={modal}/>
-            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover}/>
-
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
                 <div className={modal === true ? 'eachArtWork__img-box--shaded' :'eachArtWork__img-box'}>
     {               post.type === 'video' ?  
-                        <iframe className='eachArtWork__video'  src={`https://www.youtube.com/embed/${post.description}`}
+                        <iframe
+                        onMouseOver={() => imageHovering()}
+                        onMouseOut={() => imageHovering()}
+                        className='eachArtWork__video'  src={`https://www.youtube.com/embed/${post.description}`}
                         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen></iframe>  
                     :
-                        <img onMouseOver={() => imageHovering()}
+                        <img
+                        onMouseOver={() => imageHovering()}
                         onMouseOut={() => imageHovering()}
                         className="eachArtWork__img"
                         src={post.media.fields.file.url}
@@ -106,16 +113,16 @@ function EachArtWork(props) {
                         <div className='eachArtWork__footer'>
                                 {id - 1 >= 0 && (  
                                     <Link
-                                    onMouseOver={() => CursorHoverOnLink()}
-                                    onMouseOut={() => CursorHoverOnLink()}
+                                    onMouseOver={() => hoverLink()}
+                                    onMouseOut={() => hoverLink()}
                                     className={modal === true ? "post__back--none" : "post__back"} to={`/artwork/${previousSlug?.fields?.slug}`}>
                                         {post?.firstInCollection === 'true' ? <p>Prev Project</p> : <p>Prev</p>}
                                     </Link>
                                     )}
                                     {id + 1 < artworks.length && (  
                                         <Link
-                                        onMouseOver={() => CursorHoverOnLink()}
-                                        onMouseOut={() => CursorHoverOnLink()}
+                                        onMouseOver={() => hoverLink()}
+                                        onMouseOut={() => hoverLink()}
                                         className={modal === true ? "post__next--none" :"post__next"} to={`/artwork/${nextSlug?.fields?.slug}`}>
                                             {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
                                         </Link>

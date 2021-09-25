@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useParams} from 'react-router-dom';
 
-export default function CustomCursor({artworks, modal, hoverOnLink, hover}) {
+export default function CustomCursor({artworks, modal, hover, post, didLinkHover}) {
     const cursorRef = React.useRef(null);
     const { slug } = useParams()
-    let id = artworks.findIndex(el => el?.fields?.slug === slug)
+    console.log(post)
+    //howManyInCollection
+    // orderOnCollection
 
     const [position, setPosition] = useState({x: 0, y: 0});
     useEffect(() => {
@@ -19,15 +21,14 @@ export default function CustomCursor({artworks, modal, hoverOnLink, hover}) {
     };
     const onMouseMove = (e) => {
         setPosition({x: e.clientX, y: e.clientY});
-        }; 
-
+        };
     return (
-        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--none' :'custom-cursor'} ${hoverOnLink === true ? 'custom-cursor--none' : 'custom-cursor'} ${hover === true ? 'custom-cursor--white' : 'custom-cursor'} `}
+        <div ref={cursorRef} className={`${modal === true ? 'custom-cursor--none' :'custom-cursor'} ${didLinkHover === true ? 'custom-cursor--none' : 'custom-cursor'} ${hover === true ? 'custom-cursor--white' : 'custom-cursor'} `}
         style={{
                left: `${position.x}px`,
                top: `${position.y}px`
           }}>
-            {`${id+1}/${artworks.length}`}
+            {`${post.orderOnCollection}/${post.howManyInCollection}`}
         </div>
     )
 }

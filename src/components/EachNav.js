@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Nav({modal, openModal, CursorHoverOnLink}) {
+export default function EachNav({modal, openModal, hoverLink}) {
     
     return (
         <>
          <header  className="header">
             <Link
-            onMouseOver={() => CursorHoverOnLink()}
-            onMouseOut={() => CursorHoverOnLink()}
+            onMouseOver={() => hoverLink()}
+            onMouseOut={() => hoverLink()}
             to="/" className={`${modal === true ? 'header__h1--shaded' : "header__h1"}` }>Daria Zaprigaeva</Link>
             {modal === true ? 
             <p
-            onMouseOver={() => CursorHoverOnLink()}
-            onMouseOut={() => CursorHoverOnLink()}
+            onMouseOver={() => hoverLink()}
+            onMouseOut={() => hoverLink()}
             onClick={openModal} className='nav__link--shaded'>Artwork</p>
             : <p
-            onMouseOver={() => CursorHoverOnLink()}
-            onMouseOut={() => CursorHoverOnLink()}
+            onMouseOver={() => hoverLink()}
+            onMouseOut={() => hoverLink()}
             onClick={openModal} className='nav__link'>About</p>
         }
          </header>  
