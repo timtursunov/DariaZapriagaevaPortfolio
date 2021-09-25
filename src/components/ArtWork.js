@@ -28,10 +28,12 @@ export default function ArtWork(artwork, index ) {
             </Link> 
             :
             <Link className='link' to={`/artwork/${slug}`}>
+             <div className='artwork-div'>    
                     <img
                     onMouseOver={() => hoverOnImg()}
                     onMouseOut={() => hoverOnImg()} className='artwork__img' alt="Daria's Artworks" src={imageUrl} />
                     <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
+                </div>    
             </Link> 
     } 
     return (    
