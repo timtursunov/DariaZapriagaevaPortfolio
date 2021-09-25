@@ -90,8 +90,8 @@ const App = () => {
               exact path='/artwork/:slug'  
               render={(props) => (
                 <EachArtWork {...props} artworks={filteredArt}  modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink} />
-              )} */}
-              />
+              )}
+              /> */}
         </Switch>
         </div>
       }
