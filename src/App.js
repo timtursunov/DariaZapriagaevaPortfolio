@@ -83,7 +83,7 @@ const App = () => {
         <Route 
           exact path='/'  
           render={(props) => (
-            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink} />
+            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} />
           )}
           />
             {/* <Route 
