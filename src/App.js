@@ -63,15 +63,17 @@ const App = () => {
       }
     }, [filterType])
 
+    console.log(art)
+
   const openModal = () => {
       setModal(prev => !prev)
   }
     const changeFooterFilter = () => {
       setFooter(prev => !prev)
   }
-  const CursorHoverOnLink = () => {
-    setHoverOnLink(prev => !prev)
-}
+//   const CursorHoverOnLink = () => {
+//     setHoverOnLink(prev => !prev)
+// }
 
   return(
     <Router>
