@@ -12,7 +12,6 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
              <div
             className={ modal === true ? 'main-container--shaded' : 'main-container'}>
              <ArtWorksList modal={modal} setModal={setModal} openModal={openModal} artworks={artworks}/> 
-             <p>hello</p>
              </div> 
              <Bio modal={modal}/>
              <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>

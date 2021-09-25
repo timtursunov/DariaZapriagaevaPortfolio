@@ -88,12 +88,12 @@ const App = () => {
             <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} hoverOnLink={hoverOnLink}  CursorHoverOnLink={CursorHoverOnLink}   />
           )}
           />
-            {/* <Route 
+            <Route 
               exact path='/artwork/:slug'  
               render={(props) => (
                 <EachArtWork {...props} artworks={filteredArt}  modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink} />
               )}
-              /> */}
+              />
         </Switch>
         </div>
       }
