@@ -11,7 +11,7 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
             {/* <Nav modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/> */}
              <div
             className={ modal === true ? 'main-container--shaded' : 'main-container'}>
-             {/* <ArtWorksList modal={modal} setModal={setModal} openModal={openModal} artworks={artworks}/>  */}
+             <ArtWorksList modal={modal} setModal={setModal} openModal={openModal} artworks={artworks}/> 
              <p>hello</p>
              </div> 
              {/* <Bio modal={modal}/>

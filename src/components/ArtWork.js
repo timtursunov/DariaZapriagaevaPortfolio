@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image } from '../styles/mainPage'
 import {Link} from 'react-router-dom'
-import { useState } from 'react/cjs/react.development'
 
 export default function ArtWork(artwork, index ) {
     let contentType = artwork.artwork.fields.type
@@ -18,22 +17,23 @@ export default function ArtWork(artwork, index ) {
     const findFileType = () => {
             return contentType === 'image' ? 
             <Link className='link' to={`/artwork/${slug}`}>
-                {/* <div className='artwork-div'>
+                <div className='artwork-div'>
                     <img
-                    onMouseOver={() => hoverOnImg()}
-                    onMouseOut={() => hoverOnImg()}
+                    // onMouseOver={() => hoverOnImg()}
+                    // onMouseOut={() => hoverOnImg()}
                     className='artwork__img' alt="Daria's Artworks" src={imageUrl} /> 
-                    <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
-                </div> */}
+                    {/* <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p> */}
+                </div>
             </Link> 
             :
             <Link className='link' to={`/artwork/${slug}`}>
-             {/* <div className='artwork-div'>    
+             <div className='artwork-div'>    
                     <img
-                    onMouseOver={() => hoverOnImg()}
-                    onMouseOut={() => hoverOnImg()} className='artwork__img' alt="Daria's Artworks" src={imageUrl} />
-                    <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
-                </div>     */}
+                    // onMouseOver={() => hoverOnImg()}
+                    // onMouseOut={() => hoverOnImg()} 
+                    className='artwork__img' alt="Daria's Artworks" src={imageUrl} />
+                    {/* <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p> */}
+                </div>    
             </Link> 
     } 
     return (    
