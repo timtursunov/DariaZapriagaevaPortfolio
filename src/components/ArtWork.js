@@ -41,9 +41,6 @@ export default function ArtWork(artwork, index ) {
             <Image key={index}   className='artwork'>
                 {findFileType()}
             </Image>
-
-            hellog
-
         </>
     )
 
