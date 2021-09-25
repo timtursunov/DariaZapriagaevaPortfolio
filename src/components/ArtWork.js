@@ -42,6 +42,8 @@ export default function ArtWork(artwork, index ) {
                 {findFileType()}
             </Image>
 
+            hellog
+
         </>
     )
 
