@@ -12,34 +12,35 @@ export default function ArtWork(artwork, index ) {
 
     const [hoverText, setHoverText] = useState(false)
 
-    let hoverOnImg = () => {
-        setHoverText(each => !each)
-    }
+    // let hoverOnImg = () => {
+    //     setHoverText(each => !each)
+    // }
     const findFileType = () => {
             return contentType === 'image' ? 
             <Link className='link' to={`/artwork/${slug}`}>
-                <div className='artwork-div'>
+                {/* <div className='artwork-div'>
                     <img
                     onMouseOver={() => hoverOnImg()}
                     onMouseOut={() => hoverOnImg()}
                     className='artwork__img' alt="Daria's Artworks" src={imageUrl} /> 
                     <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
-                </div>
+                </div> */}
             </Link> 
             :
             <Link className='link' to={`/artwork/${slug}`}>
-             <div className='artwork-div'>    
+             {/* <div className='artwork-div'>    
                     <img
                     onMouseOver={() => hoverOnImg()}
                     onMouseOut={() => hoverOnImg()} className='artwork__img' alt="Daria's Artworks" src={imageUrl} />
                     <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
-                </div>    
+                </div>     */}
             </Link> 
     } 
     return (    
         <>
             <Image key={index}   className='artwork'>
                 {findFileType()}
+                <p>ggg</p>
             </Image>
         </>
     )
