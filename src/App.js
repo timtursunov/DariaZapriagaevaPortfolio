@@ -71,9 +71,9 @@ const App = () => {
     const changeFooterFilter = () => {
       setFooter(prev => !prev)
   }
-//   const CursorHoverOnLink = () => {
-//     setHoverOnLink(prev => !prev)
-// }
+  const CursorHoverOnLink = () => {
+    setHoverOnLink(prev => !prev)
+}
 
   return(
     <Router>
@@ -85,7 +85,7 @@ const App = () => {
         <Route 
           exact path='/'  
           render={(props) => (
-            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal}  />
+            <MainPage {...props} artworks={filteredArt} setFilterType={setFilterType} changeFooterFilter={changeFooterFilter} footer={footer} setFooter={setFooter} filterType={filterType} modal={modal} setModal={setModal} openModal={openModal} hoverOnLink={hoverOnLink}  CursorHoverOnLink={CursorHoverOnLink}   />
           )}
           />
             {/* <Route 
