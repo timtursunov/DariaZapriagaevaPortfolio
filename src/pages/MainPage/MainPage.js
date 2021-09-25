@@ -14,13 +14,13 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
              <ArtWorksList modal={modal} setModal={setModal} openModal={openModal} artworks={artworks}/> 
              <p>hello</p>
              </div> 
-             {/* <Bio modal={modal}/>
+             <Bio modal={modal}/>
              <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
                             <p>Development by Timur Tursunov</p>
                             <p>/</p>
                             <p>Design by Deniz Kilicci</p>
             </div>
-            <Footer modal={modal} setFilterType={setFilterType} filterType={filterType}/>   */}
+            <Footer modal={modal} setFilterType={setFilterType} filterType={filterType}/>  
         </>
     )
 }
