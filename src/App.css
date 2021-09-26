@@ -133,7 +133,7 @@ h4 {
   height: 176px;
   cursor: pointer;
 
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
   position: relative;
 }
 .artwork-div {
@@ -151,7 +151,7 @@ h4 {
   text-decoration: none !important;
   text-align: center;
   opacity: 0.6;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
 }
 .artwork__hover-text--active {
   margin-top: 16px;
@@ -161,7 +161,7 @@ h4 {
   text-decoration: none !important;
   text-align: center;
   opacity: 0.6;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .artwork__img:hover {
@@ -260,7 +260,7 @@ footer {
   display: flex;
   padding: 0px;
   justify-content: space-between;
-  z-index: 9999999999;
+  z-index: 1;
   transition: 2s;
   display: flex;
   padding: 0 32px;
@@ -341,15 +341,6 @@ footer {
   position: relative;
   transition: 0.3s;
 }
-/* .eachArtWork__footer--shaded {
-  color: transparent;
-  display: flex;
-  width: 0;
-  position: fixed;
-  padding: 0 32px;
-  bottom: 24px;
-  transition: 0.3s;
-} */
 .eachArtWork__img,
 .video-box {
   width: auto;
@@ -528,8 +519,8 @@ footer {
   position: fixed;
   left: 32px;
   width: 100%;
-  z-index: 6000000;
-  padding-top: 353px;
+  z-index: 1;
+  padding-top: 346px;
   font-size: 15px;
   color: white;
   height: 100%;
@@ -541,6 +532,10 @@ footer {
 .bio-link {
   position: relative;
   cursor: pointer;
+}
+.bio-reference__link {
+  text-decoration: none;
+  color: #fdfcfc;
 }
 .bio-links p:nth-child(1)::after {
   cursor: pointer;
@@ -598,8 +593,6 @@ footer {
 }
 .bio-references--shaded {
   position: fixed;
-  display: flex;
-
   color: #fdfcfc;
   opacity: 0.6;
   font-size: 13px;
@@ -607,7 +600,8 @@ footer {
   bottom: 24px;
   left: 32px;
   display: flex;
-  z-index: 2;
+  flex-wrap: wrap;
+  z-index: 77777;
 }
 .bio-references p:nth-child(2) {
   margin-left: 4px;
@@ -624,6 +618,12 @@ footer {
 .footer__scroller--shaded {
   color: transparent;
   z-index: -1;
+}
+.bio-reference__Daria--mobile {
+  display: none;
+}
+.fakeclass {
+  color: transparent;
 }
 
 /* Iphone X */
@@ -643,6 +643,9 @@ footer {
   }
   .eachArtWork__footer {
     padding: 0 16px;
+  }
+  .bio-reference__Daria--mobile {
+    font-size: 10px;
   }
   .header {
     padding: 24px 16px;
@@ -731,6 +734,9 @@ footer {
   .post__next {
     right: 16px;
   }
+  .bio-reference__link span {
+    font-size: 10px;
+  }
 }
 /* tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -776,6 +782,9 @@ footer {
     z-index: 555555555;
     width: 61px;
   }
+  .bio-reference__Daria--mobile {
+    display: none;
+  }
 }
 /* laptop */
 @media (min-width: 1025px) and (max-width: 1440px) {
@@ -809,5 +818,8 @@ footer {
   }
   .eachArtWork__info-box--shaded {
     bottom: 43px;
+  }
+  .bio-reference__Daria--mobile {
+    display: none;
   }
 }

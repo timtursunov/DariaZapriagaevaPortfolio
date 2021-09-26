@@ -1,13 +1,13 @@
 
 import React, {useState, useEffect, useRef} from 'react';
-import { useParams, Link,} from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import { getSinglePost } from '../../hooks/client';
 import { withRouter } from 'react-router'
 import CustomCursor from '../../hooks/customCursor';
 import Bio from '../../components/Bio';
 import Nav from '../../components/Nav';
 import EachNav from '../../components/EachNav';
-
+import { ExternalLink } from 'react-external-link';
 
 function EachArtWork(props) {
     let {artworks} = props;
@@ -95,9 +95,16 @@ function EachArtWork(props) {
                 </div>
             </div>
             <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
-                            <p>Development by Timur Tursunov</p>
-                            <p>/</p>
-                            <p>Design by Deniz Kilicci</p>
+                            <p>© 2021, Daria Zapriagaeva</p>
+                            <p> / </p>
+                            <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
+                            <p onClick={()=> {console.log('hello')}}>Development by Timur Tursunov</p>
+                            <p className='fakeclass'> f </p>
+                            <p> / </p>
+                            <p className='fakeclass'> f </p>
+                            <ExternalLink class='bio-reference__link' href="https://denizkilicci.com/">
+                            <span>Design by Deniz Kilicci</span>
+                            </ExternalLink>
             </div>
         </div>
       )
