@@ -75,7 +75,7 @@ function EachArtWork(props) {
     const renderPost = () => {
       if (isLoading) return <Nav/>
       return (
-        <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
+        <div>
             <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} didVideoHover={didVideoHover} />
             <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
             <Bio modal={modal}/>
@@ -134,7 +134,7 @@ function EachArtWork(props) {
                                     onMouseOver={() => hoverLink()}
                                     onMouseOut={() => hoverLink()}
                                     className={modal === true ? "post__back--none" : "post__back"} to={`/artwork/${previousSlug?.fields?.slug}`}>
-                                        {post?.firstInCollection === 'true' ? <p className='fakeclass'>Prev Project</p> : <p className='fakeclass'>Prev</p>}
+                                        {post?.firstInCollection === 'true' ? <p className='hidden'>Prev Project</p> : <p className='hidden'>Prev</p>}
                                     </Link>
                                     )}
                                     {id + 1 < artworks.length && (  
@@ -150,7 +150,7 @@ function EachArtWork(props) {
                                     onMouseOver={() => hoverLink()}
                                     onMouseOut={() => hoverLink()}
                                     className={modal === true ? "post__next--none" :"post__next"} to={`/artwork/${nextSlug?.fields?.slug}`}>
-                                        {post?.lastInCollection === 'true' ? <p className='fakeclass'>Next Project</p> : <p className='fakeclass'>Next</p>}
+                                        {post?.lastInCollection === 'true' ? <p className='hidden'>Next Project</p> : <p className='hidden'>Next</p>}
                                     </Link>
                                     ) }
                         </div>
