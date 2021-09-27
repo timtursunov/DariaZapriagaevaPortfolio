@@ -23,6 +23,7 @@ function EachArtWork(props) {
     const [hover, setHover] = useState(false)
     const [timer, setTimer] = useState(1)
     const [didLinkHover, setDidLinkHover] = useState(false)
+    const [didVideoHover, setDidVideoHover] = useState(false)
 
     const iid = useRef(null)
 
@@ -61,6 +62,10 @@ function EachArtWork(props) {
         setDidLinkHover(prev => !prev)
     }
 
+    const hoverVideo = () => {
+        setDidVideoHover(prev => !prev)
+    }
+
 
     
     let id = artworks.findIndex(el => el?.fields?.slug === slug)
@@ -71,16 +76,16 @@ function EachArtWork(props) {
       if (isLoading) return <Nav/>
       return (
         <div className={modal === true ? 'renderPost--shaded' : 'renderPost'}>
-            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} />
+            <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} didVideoHover={didVideoHover} />
             <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
             <Bio modal={modal}/>
-            <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
+            <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${didVideoHover === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
                 <div className={modal === true ? 'eachArtWork__img-box--shaded' :'eachArtWork__img-box'}>
     {               post.type === 'video' ?  
                         <iframe
-                        onMouseOver={() => imageHovering()}
-                        onMouseOut={() => imageHovering()}
+                        onMouseOver={() => hoverVideo()}
+                        onMouseOut={() => hoverVideo()}
                         className='eachArtWork__video'  src={`https://www.youtube.com/embed/${post.description}`}
                         title="YouTube video player" frameborder="0" allow=" autoplay; " 
                         allowfullscreen></iframe>  
@@ -111,7 +116,7 @@ function EachArtWork(props) {
     }
     return (
         <>
-                <div className={`${hover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${modal === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} `}>
+                <div className={`${hover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${modal === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} ${didVideoHover === true ? 'eachArtWork__wrapper--shaded' :'eachArtWork__wrapper'} `}>
                     <div className="post">
                         {renderPost()}
                     </div>
@@ -133,15 +138,12 @@ function EachArtWork(props) {
                                         </Link>
                                     )}
                         </div>
-                        <div className={`${hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'} ${modal === true ? 'eachArtWork__info-box--none'  : 'eachArtWork__info-box'}`}>
+                        <div className={`${hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'} ${modal === true ? 'eachArtWork__info-box--none'  : 'eachArtWork__info-box'} ${didVideoHover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'}`}>
                                     <p>{post?.collection}</p>
                         </div>
                 </div>
         </>
-
       )
-    
-
 }
 
 export default withRouter(EachArtWork)
