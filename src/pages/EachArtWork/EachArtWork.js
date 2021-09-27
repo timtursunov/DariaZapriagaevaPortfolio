@@ -121,12 +121,20 @@ function EachArtWork(props) {
                         {renderPost()}
                     </div>
                         <div className='eachArtWork__footer'>
-                                {id - 1 >= 0 && (  
+                                    {id - 1 >= 0 && (  
                                     <Link
                                     onMouseOver={() => hoverLink()}
                                     onMouseOut={() => hoverLink()}
                                     className={modal === true ? "post__back--none" : "post__back"} to={`/artwork/${previousSlug?.fields?.slug}`}>
                                         {post?.firstInCollection === 'true' ? <p>Prev Project</p> : <p>Prev</p>}
+                                    </Link>
+                                    )}
+                                    {id >= 0 && (  
+                                    <Link
+                                    onMouseOver={() => hoverLink()}
+                                    onMouseOut={() => hoverLink()}
+                                    className={modal === true ? "post__back--none" : "post__back"} to={`/artwork/${previousSlug?.fields?.slug}`}>
+                                        {post?.firstInCollection === 'true' ? <p className='fakeclass'>Prev Project</p> : <p className='fakeclass'>Prev</p>}
                                     </Link>
                                     )}
                                     {id + 1 < artworks.length && (  
@@ -137,6 +145,14 @@ function EachArtWork(props) {
                                             {post?.lastInCollection === 'true' ? <p>Next Project</p> : <p>Next</p>}
                                         </Link>
                                     )}
+                                    {id  < artworks.length && (
+                                    <Link
+                                    onMouseOver={() => hoverLink()}
+                                    onMouseOut={() => hoverLink()}
+                                    className={modal === true ? "post__next--none" :"post__next"} to={`/artwork/${nextSlug?.fields?.slug}`}>
+                                        {post?.lastInCollection === 'true' ? <p className='fakeclass'>Next Project</p> : <p className='fakeclass'>Next</p>}
+                                    </Link>
+                                    ) }
                         </div>
                         <div className={`${hover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'} ${modal === true ? 'eachArtWork__info-box--none'  : 'eachArtWork__info-box'} ${didVideoHover === true ? 'eachArtWork__info-box--shaded'  :'eachArtWork__info-box'}`}>
                                     <p>{post?.collection}</p>
