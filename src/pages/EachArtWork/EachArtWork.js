@@ -83,7 +83,7 @@ function EachArtWork(props) {
         }>
                 <div className={modal === true ? 'eachArtWork__img-box--shaded' :'eachArtWork__img-box'}>
     {               post.type === 'video' ?  
-                        <iframe
+                        <iframe class='each__iframe'
                         onMouseOver={() => hoverVideo()}
                         onMouseOut={() => hoverVideo()}
                         className='eachArtWork__video'  src={`https://www.youtube.com/embed/${post.description}`}

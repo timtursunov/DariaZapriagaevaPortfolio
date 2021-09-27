@@ -574,7 +574,7 @@ footer {
 .bio {
   z-index: -1;
   position: fixed;
-  left: 32px;
+  padding-left: 32px;
   width: 100%;
   padding-top: 346px;
   font-size: 15px;
@@ -585,7 +585,7 @@ footer {
 .bio--shaded {
   cursor: default !important;
   position: fixed;
-  left: 32px;
+  padding-left: 32px;
   width: 100%;
   z-index: 1;
   padding-top: 346px;
@@ -725,6 +725,7 @@ footer {
   .eachArtWork__video {
     width: 100%;
     padding: 0 16px;
+    height: auto;
   }
   .eachArtWork__footer {
     padding: 0 16px;
@@ -773,11 +774,11 @@ footer {
     width: 342px;
   }
   .bio {
-    left: 16px;
+    padding-left: 16px;
     padding-top: 284px;
   }
   .bio--shaded {
-    left: 16px;
+    padding-left: 16px;
     padding-top: 284px;
     background-color: #1c1917;
     -webkit-transition: all 0.2s ease-out;
@@ -831,6 +832,9 @@ footer {
   }
   .bio-reference__link span {
     font-size: 10px;
+  }
+  .each__iframe {
+    width: 200px;
   }
 }
 /* tablet */
