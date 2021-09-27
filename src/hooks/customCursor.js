@@ -4,7 +4,6 @@ import { useParams} from 'react-router-dom';
 export default function CustomCursor({modal, hover, post, didLinkHover, didVideoHover}) {
     const cursorRef = React.useRef(null);
     const { slug } = useParams()
-    console.log(post)
 
     const [position, setPosition] = useState({x: 0, y: 0});
     useEffect(() => {

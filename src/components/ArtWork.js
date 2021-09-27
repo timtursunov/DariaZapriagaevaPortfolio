@@ -11,8 +11,6 @@ export default function ArtWork(artwork, index ) {
 
     let isThumbnail = artwork.artwork.fields.firstInCollection
 
-    console.log(isThumbnail)
-
     const [hoverText, setHoverText] = useState(false)
 
     let hoverOnImg = () => {

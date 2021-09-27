@@ -62,9 +62,6 @@ const App = () => {
         changeFooterFilter()
       }
     }, [filterType])
-
-    console.log(art)
-
   const openModal = () => {
       setModal(prev => !prev)
   }

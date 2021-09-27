@@ -19,7 +19,7 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
                             <p>© 2021, Daria Zapriagaeva</p>
                             <p> / </p>
                             <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
-                            <p onClick={()=> {console.log('hello')}}>Development by Timur Tursunov</p>
+                            <p>Development by Timur Tursunov</p>
                             <p className='fakeclass'> f </p>
                             <p> / </p>
                             <p className='fakeclass'> f </p>

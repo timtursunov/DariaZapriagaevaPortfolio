@@ -1,14 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import Client from '../hooks/client'
+import Testing from './Testing'
 export default function Bio({modal}) {
+    const [bio, setBio] = useState([])
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await Client.getEntries({
+              content_type: 'myBio',
+              order: "sys.createdAt"
+            })
+             const bio = response.items
+             setBio(bio)
+          } catch(errors) {
+            console.log(errors)
+          }
+        }
+        fetchData()
+        }, [])  
+        // console.log(bio)
     return (
         <div className={modal === true ? 'bio--shaded' : 'bio'}>
-            <div className='bio-bio'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac ante convallis, euismod ligula sit amet, fringilla lacus. Vestibulum nec neque eu nisl mattis pretium. Vestibulum fringilla erat non ultricies bibendum. Sed eleifend, ligula ac venenatis ultricies, turpis felis commodo lacus, in vulputate magna ante ultrices nibh. Integer porta elementum neque, in congue felis eleifend at. Morbi ut diam imperdiet, tempus ipsum non, varius libero.</p>
-            </div>
-            <div className='bio-links'>
-                <p className='bio-link'>email.contact@email.com</p>
-                <p className='bio-link'  >instagram</p>
-            </div>
+            <Testing array={bio}/>
         </div>
     )
 }
