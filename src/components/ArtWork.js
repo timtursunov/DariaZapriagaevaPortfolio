@@ -9,12 +9,21 @@ export default function ArtWork(artwork, index ) {
     let collectionQuan = artwork.artwork.fields.howManyInCollection
     let collectionIndex = artwork.artwork.fields.orderOnCollection
 
+    let isThumbnail = artwork.artwork.fields.firstInCollection
+
+    console.log(isThumbnail)
+
     const [hoverText, setHoverText] = useState(false)
 
     let hoverOnImg = () => {
         setHoverText(each => !each)
     }
+
+
+
+
     const findFileType = () => {
+        if (isThumbnail === 'true'){
             return contentType === 'image' ? 
             <Link className='link' to={`/artwork/${slug}`}>
                 <div className='artwork-div'>
@@ -35,6 +44,7 @@ export default function ArtWork(artwork, index ) {
                     <p className={hoverText === true ? 'artwork__hover-text--active' :'artwork__hover-text'}>{collectionIndex} / {collectionQuan}</p>
                 </div>    
             </Link> 
+        }
     } 
     return (    
         <>

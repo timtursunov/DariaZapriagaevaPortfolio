@@ -260,6 +260,19 @@ footer {
   display: flex;
   padding: 0px;
   justify-content: space-between;
+  z-index: 555555;
+  transition: 2s;
+  display: flex;
+  padding: 0 32px;
+}
+.footer--shaded {
+  position: fixed;
+  color: #1c1917;
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  padding: 0px;
+  justify-content: space-between;
   z-index: 1;
   transition: 2s;
   display: flex;

@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer({setFilterType, modal, filterType}) {
     return (
         <>  
-        <footer className="footer">
+        <footer className={modal === true ? 'footer--shaded' :"footer"}>
             <div>
                 <p className={modal === true ? 'footer__scroller--shaded' :'footer__scroller'}>Scroll to explore</p>
             </div>
