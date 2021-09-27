@@ -17,7 +17,7 @@ const App = () => {
       try {
         const response = await Client.getEntries({
           content_type: 'artPiece',
-          order: "sys.createdAt"
+          order: "-sys.createdAt"
         })
          const art = response.items
          setArt(art)

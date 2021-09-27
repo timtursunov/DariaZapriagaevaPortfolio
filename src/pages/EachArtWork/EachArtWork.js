@@ -82,7 +82,7 @@ function EachArtWork(props) {
                         onMouseOver={() => imageHovering()}
                         onMouseOut={() => imageHovering()}
                         className='eachArtWork__video'  src={`https://www.youtube.com/embed/${post.description}`}
-                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        title="YouTube video player" frameborder="0" allow=" autoplay; " 
                         allowfullscreen></iframe>  
                     :
                         <img
