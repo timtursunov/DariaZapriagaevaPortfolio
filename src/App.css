@@ -416,6 +416,7 @@ footer {
   display: flex;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   align-items: center;
   opacity: 1;
   -webkit-transition: all 0ms;
@@ -427,6 +428,7 @@ footer {
   display: flex;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   align-items: center;
   opacity: 0;
   -webkit-transition: all 0ms;
