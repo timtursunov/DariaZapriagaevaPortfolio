@@ -333,7 +333,7 @@ footer {
   height: 100vh;
   width: 100%;
   background-color: #fdfcfc;
-  z-index: 55555555;
+  position: fixed;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -343,6 +343,7 @@ footer {
   height: 100vh;
   width: 100%;
   background: #1c1917;
+  position: fixed;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
