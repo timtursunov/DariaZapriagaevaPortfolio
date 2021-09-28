@@ -272,7 +272,7 @@ h4 {
   color: white;
 }
 .header {
-  position: absolute;
+  position: fixed;
   color: #1c1917;
   padding: 24px 32px;
   display: flex;
@@ -355,7 +355,7 @@ footer {
   width: 100%;
   justify-content: center;
   bottom: 41px;
-  position: relative;
+  position: fixed;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -370,7 +370,7 @@ footer {
   width: 100%;
   justify-content: center;
   bottom: 41px;
-  position: relative;
+  position: fixed;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -395,7 +395,7 @@ footer {
   color: #1c1917;
   display: flex;
   width: 100%;
-  position: relative;
+  position: fixed;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
