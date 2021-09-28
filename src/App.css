@@ -96,7 +96,7 @@ h4 {
 }
 .main-container {
   width: 100vh;
-  height: 100vw;
+  height: 102vw;
   transform: rotate(-90deg) translateX(-100vh);
   transform-origin: top left;
   overflow-x: hidden;
