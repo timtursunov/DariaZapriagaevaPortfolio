@@ -437,7 +437,8 @@ footer {
 .eachArtWork__wrapper {
   cursor: none;
   background-color: #fdfcfc;
-  height: 100vh;
+  height: 100%;
+  position: fixed;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -446,8 +447,9 @@ footer {
 .eachArtWork__wrapper--shaded {
   cursor: default !important;
   z-index: -1px;
+  position: fixed;
   background-color: #1c1917;
-  height: 100vh;
+  height: 100%;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
