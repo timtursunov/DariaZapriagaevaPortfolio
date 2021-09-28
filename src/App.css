@@ -711,6 +711,13 @@ footer {
 
 /* Iphone X */
 @media (min-width: 320px) and (max-width: 767px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
   body {
     overscroll-behavior-y: none;
   }
