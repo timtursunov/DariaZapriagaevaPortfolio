@@ -726,9 +726,15 @@ footer {
   html {
     overflow-y: hidden !important;
     max-height: 100% !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
   }
   .frame {
     overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
   }
   body,
   .header__h1,
