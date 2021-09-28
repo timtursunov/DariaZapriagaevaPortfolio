@@ -824,7 +824,7 @@ footer {
   }
   .eachArtWork__info-box {
     font-size: 10px;
-    bottom: 42px;
+    bottom: 26px;
   }
   .eachArtWork__info-box--shaded {
     font-size: 10px;
@@ -868,6 +868,10 @@ footer {
   }
   .bio-reference__link span {
     font-size: 10px;
+  }
+  .post__back,
+  .post__next {
+    bottom: 24px;
   }
 }
 
