@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overscroll-behavior-y: none;
 }
 @font-face {
   font-family: "Inter";
@@ -710,6 +711,9 @@ footer {
 
 /* Iphone X */
 @media (min-width: 320px) and (max-width: 767px) {
+  body {
+    overscroll-behavior-y: none;
+  }
   body,
   .header__h1,
   .header__h1--shaded,
