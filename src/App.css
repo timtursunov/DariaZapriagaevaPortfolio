@@ -723,8 +723,7 @@ footer {
     position: fixed;
   } */
   body,
-  html,
-  * {
+  html {
     overflow-y: hidden !important;
     max-height: 100% !important;
   }
