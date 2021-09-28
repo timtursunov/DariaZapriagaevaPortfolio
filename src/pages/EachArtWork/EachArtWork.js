@@ -77,8 +77,8 @@ function EachArtWork(props) {
       return (
         <div>
             <CustomCursor artworks={artworks} modal={modal} hoverOnLink={hoverOnLink} hover={hover} post={post} didLinkHover={didLinkHover} didVideoHover={didVideoHover} />
-            <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
-            <Bio modal={modal}/>
+            {/* <EachNav modal={modal} setModal={setModal} openModal={openModal} hoverLink={hoverLink} didLinkHover={didLinkHover} />
+            <Bio modal={modal}/> */}
             <div className={`${hover === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${modal === true ? 'eachArtWork--shaded' : 'eachArtWork'} ${didVideoHover === true ? 'eachArtWork--shaded' : 'eachArtWork'}`
         }>
                 <div className={modal === true ? 'eachArtWork__img-box--shaded' :'eachArtWork__img-box'}>
@@ -99,7 +99,7 @@ function EachArtWork(props) {
                     />}
                 </div>
             </div>
-            <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
+            {/* <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
                             <p>© 2021, Daria Zapriagaeva</p>
                             <p> / </p>
                             <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
@@ -110,7 +110,7 @@ function EachArtWork(props) {
                             <ExternalLink class='bio-reference__link' href="https://denizkilicci.com/">
                             <span>Design by Deniz Kilicci</span>
                             </ExternalLink>
-            </div>
+            </div> */}
         </div>
       )
     }
