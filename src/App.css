@@ -685,7 +685,7 @@ footer {
   bottom: 24px;
   left: 32px;
   display: flex;
-  z-index: -1;
+  z-index: -20;
 }
 .bio-references--shaded {
   position: fixed;
