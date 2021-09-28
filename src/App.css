@@ -711,6 +711,13 @@ footer {
 
 /* Iphone X */
 @media (min-width: 320px) and (max-width: 767px) {
+  .eachArtWork__img-box,
+  .main-container,
+  .main-container--shaded,
+  .eachArtWork__img-box--shaded {
+    height: 100vh;
+    box-sizing: border-box;
+  }
   body,
   html {
     overflow-x: hidden;
