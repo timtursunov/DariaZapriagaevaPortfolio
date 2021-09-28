@@ -28,26 +28,7 @@ const App = () => {
     }
     fetchData()
     }, [])  
-    const [preLoader, setpreLoader] = useState(true)
-    const [timer, setTimer] = useState(1)
-    // for the loader
-    const id = useRef(null)
-    const clear = () => {
-        window.clearInterval(id.current)
-        setpreLoader(false)
-    }
-    useEffect(() => {
-        id.current = window.setInterval(() => {
-            setTimer((timer) => {
-                return timer - 1
-            })
-        }, 1700)
-    }, [])
-    useEffect(() => {
-        if(timer === 0 ){
-            clear()
-        } 
-    }, [timer])
+
     useEffect(() => {
       if (filterType === 'photo') {
         setFilteredArt(art.filter(el => el.fields.type === "image"))
@@ -74,9 +55,6 @@ const App = () => {
 
   return(
     <Router>
-      {preLoader ? <div className='loader-wrapper'>
-                "loading..."
-            </div> :
        <div className='frame'>
         <Switch>
         <Route 
@@ -93,7 +71,6 @@ const App = () => {
               />
         </Switch>
         </div>
-      }
     </Router>
   )
 } 
