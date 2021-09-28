@@ -94,9 +94,13 @@ h4 {
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden;
 }
+.main-container__wrapper {
+  height: 100%;
+  width: 100%;
+}
 .main-container {
   width: 100vh;
-  height: 102vw;
+  height: 100vw;
   transform: rotate(-90deg) translateX(-100vh);
   transform-origin: top left;
   overflow-x: hidden;
@@ -742,6 +746,9 @@ footer {
     padding: 0 16px;
     height: auto;
   }
+  .eachArtWork__video {
+    height: 428px;
+  }
   .eachArtWork__footer {
     padding: 0 16px;
   }
@@ -847,9 +854,6 @@ footer {
   }
   .bio-reference__link span {
     font-size: 10px;
-  }
-  .each__iframe {
-    width: 200px;
   }
 }
 /* tablet */

@@ -8,14 +8,14 @@ import { ExternalLink } from 'react-external-link';
 
 const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, modal, CursorHoverOnLink, hoverOnLink}) => {
     return (
-        <>
+        <div class='main-container__wrapper'>
             <Nav modal={modal} setModal={setModal} openModal={openModal} CursorHoverOnLink={CursorHoverOnLink} hoverOnLink={hoverOnLink}/>
              <div
             className={ modal === true ? 'main-container--shaded' : 'main-container'}>
              <ArtWorksList modal={modal} setModal={setModal} openModal={openModal} artworks={artworks}/> 
              </div> 
              <Bio modal={modal}/>
-             <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
+             {/* <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
                             <p>© 2021, Daria Zapriagaeva</p>
                             <p> / </p>
                             <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
@@ -26,9 +26,9 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
                             <ExternalLink class='bio-reference__link' href="https://denizkilicci.com/">
                             <span>Design by Deniz Kilicci</span>
                             </ExternalLink>
-            </div>
+            </div>  */}
             <Footer modal={modal} setFilterType={setFilterType} filterType={filterType}/>  
-        </>
+        </div>
     )
 }
 export default MainPage
