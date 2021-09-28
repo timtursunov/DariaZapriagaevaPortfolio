@@ -724,13 +724,11 @@ footer {
   }
   body,
   html {
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overscroll-behavior-y: none;
   }
   ::-webkit-scrollbar {
     display: none;
-  }
-  body {
-    overscroll-behavior-y: none;
   }
   body,
   .header__h1,
