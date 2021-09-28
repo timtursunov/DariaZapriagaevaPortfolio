@@ -403,6 +403,7 @@ footer {
   display: flex;
   width: 100%;
   position: fixed;
+  z-index: 5555;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
