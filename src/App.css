@@ -531,10 +531,12 @@ footer {
 }
 .bio__links {
   margin-top: 120px;
+  display: flex;
 }
 .bio__link {
   position: relative;
   cursor: pointer;
+  display: flex;
 }
 .bio__link::after {
   cursor: pointer;
@@ -644,7 +646,7 @@ footer {
 }
 .bio-links p:nth-child(1):hover::after {
   z-index: 555555555;
-  width: 168px;
+  width: 156px;
 }
 .bio-links p:nth-child(2)::after {
   cursor: pointer;
@@ -662,7 +664,7 @@ footer {
 }
 .bio-links p:nth-child(2):hover::after {
   z-index: 555555555;
-  width: 65px;
+  width: 44px;
 }
 .bio-reference {
   position: absolute;
@@ -922,6 +924,14 @@ footer {
   }
   .bio-reference__Daria--mobile {
     display: none;
+  }
+  .bio-links p:nth-child(1):hover::after {
+    z-index: 555555555;
+    width: 136px;
+  }
+  .bio-links p:nth-child(2):hover::after {
+    z-index: 555555555;
+    width: 38px;
   }
 }
 /* laptop */
