@@ -8,7 +8,7 @@ export default function Nav({modal, openModal, CursorHoverOnLink}) {
             <Link
             onMouseOver={() => CursorHoverOnLink()}
             onMouseOut={() => CursorHoverOnLink()}
-            to="/" className={`${modal === true ? 'header__h1--shaded' : "header__h1"}` }>Daria Zaprigaeva</Link>
+            to="/" className={`${modal === true ? 'header__h1--shaded' : "header__h1"}` }>Daria Zapriagaeva</Link>
             {modal === true ? 
             <p
             onMouseOver={() => CursorHoverOnLink()}

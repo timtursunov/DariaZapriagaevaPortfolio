@@ -9,7 +9,7 @@ export default function EachNav({modal, openModal, hoverLink}) {
             <Link
             onMouseOver={() => hoverLink()}
             onMouseOut={() => hoverLink()}
-            to="/" className={`${modal === true ? 'header__h1--shaded' : "header__h1"}` }>Daria Zaprigaeva</Link>
+            to="/" className={`${modal === true ? 'header__h1--shaded' : "header__h1"}` }>Daria Zapriagaeva</Link>
             {modal === true ? 
             <p
             onMouseOver={() => hoverLink()}
