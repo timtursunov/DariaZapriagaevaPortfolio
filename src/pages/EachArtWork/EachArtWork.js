@@ -100,7 +100,7 @@ function EachArtWork(props) {
                 </div>
             </div>
             <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
-                            <p>© 2021, Daria Zapriagaeva</p>
+                            <p>© {new Date().getFullYear()}, Daria Zapriagaeva</p>
                             <p> / </p>
                             <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
                             <p>Development by Timur Tursunov</p>
