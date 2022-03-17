@@ -1,9 +1,10 @@
-import React, {useState, useEffect ,useRef} from 'react'
+import React, {useState, useEffect } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import EachArtWork from './pages/EachArtWork/EachArtWork';
 import Client from './hooks/client'
+import {Helmet} from "react-helmet";
 const App = () => {
   const [art, setArt] = useState([]);
   const [filteredArt, setFilteredArt] = useState([]);
@@ -55,6 +56,11 @@ const App = () => {
 
   return(
     <Router>
+        <Helmet>
+          <meta charSet="utf-8" />
+            <title>Daria Zapriagaeva</title>
+            <meta name="description" content="Daria Zapriagaeva is a photographer and video artist based in Toronto, Canada." />
+        </Helmet>
        <div className='frame'>
         <Switch>
         <Route 
