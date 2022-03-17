@@ -16,7 +16,7 @@ const MainPage = ({artworks, setFilterType,filterType, openModal, setModal, moda
              </div> 
              <Bio modal={modal}/>
              <div className={modal === true ? 'bio-references--shaded' : 'bio-references'}>
-                            <p>© 2021, Daria Zapriagaeva</p>
+                            <p>© {new Date().getFullYear()}, Daria Zapriagaeva</p>
                             <p> / </p>
                             <p class='bio-reference__Daria--mobile'>© {new Date().getFullYear()}, Daria Zapriagaeva / <br></br></p> 
                             <ExternalLink class='bio-reference__link' href="https://timturs.com/">
