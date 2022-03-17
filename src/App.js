@@ -56,11 +56,11 @@ const App = () => {
 
   return(
     <Router>
-        <Helmet>
+        {/* <Helmet>
           <meta charSet="utf-8" />
             <title>Daria Zapriagaeva</title>
             <meta name="description" content="Daria Zapriagaeva is a photographer and video artist based in Toronto, Canada." />
-        </Helmet>
+        </Helmet> */}
        <div className='frame'>
         <Switch>
         <Route 
